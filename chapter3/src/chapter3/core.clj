@@ -37,17 +37,17 @@
 ;(#(println (str "the new number is: " (+ % 100))) 20) 
 
 (defn dec-maker  
-"Create a custom decrementor" 
-[dec-by]
-(println "===================== Question 3 ====================" )
-#(- % dec-by)
+	"Create a custom decrementor" 
+	[dec-by]
+	(println "===================== Question 3 ====================" )
+	#(- % dec-by)
 )
 
 (defn mapset 
-"Functions like a map but returns a collection"
-[func args]
-(println "===================== Question 4 ====================" )
-(println (str "The converted collection is :"(set (map func args))))
+	"Functions like a map but returns a collection"
+	[func args]
+	(println "===================== Question 4 ====================" )
+	(println (str "The converted collection is :"(set (map func args))))
 )
 
 
