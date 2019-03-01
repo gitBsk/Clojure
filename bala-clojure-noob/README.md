@@ -1,4 +1,4 @@
-# bala-clojure-noob
+# bala-clojure-noob Chapter 1
 
 FIXME: description
 
