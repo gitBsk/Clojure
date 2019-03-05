@@ -51,6 +51,25 @@
 )
 
 
+(defn match-part [part]
+(println "===================== Question 5 ====================" )
+(if (clojure.string/starts-with? (:name part) "left")
+(do
+(loop [x 0]
+(if (< x 10)
+(do
+(hash-map :name (str "part" x) :size (:size part))
+)
+)
+(recur (inc x)))
+)))
+
+(match-part {:name "left-eye" :size 1})
+
+
+
+
+
 
 ;Remove ; to execute questions
 ;================================
@@ -68,3 +87,5 @@
 ;Call for Question 4
 ;(mapset inc [1 2 4 5 2 1 5 4 3 4 5 5 1 2])
 
+;Call for Question 5
+(match-part {:name "left-eye" :size 1})
