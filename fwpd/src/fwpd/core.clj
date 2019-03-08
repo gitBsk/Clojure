@@ -13,15 +13,25 @@
 
 (defn parse  "Convert a CSV into rows of columns"  [string]  (map #(clojure.string/split % #",")       (clojure.string/split string #"\n")))
 
-(defn mapify  "Return a seq of maps like {:name \"Edward Cullen\" :glitter-index 10}"  
+(defn mapify  "Return a seq of maps like {:name \"Edward Cullen\" :glitter-index 10}"
 [rows]  (map (fn [unmapped-row]
          (reduce (fn [row-map [vamp-key value]]
 		 (assoc row-map vamp-key (convert vamp-key value)))
 		 {}                 (map vector vamp-keys unmapped-row)))       rows))
 
-(defn glitter-filter  [minimum-glitter records] 
-	(conj '() (filter #(>= (:glitter-index %) minimum-glitter) records)))
-		 
-		 
-;(first (mapify (parse (slurp filename)))) 
+(defn glitter-filter  [minimum-glitter records]
+	 (filter #(>= (:glitter-index %) minimum-glitter) records))
 
+;Solution to Ex 1
+(defn glitter-names [minimum-glitter records]
+     	 (map :name (filter #(>= (:glitter-index %) minimum-glitter) records)))
+
+;Solution to Ex 2
+(defn append
+         [suspects-list name glitter]
+         (conj suspects-list (into {} {:name name :glitter-index glitter})))
+
+
+
+;(first (mapify (parse (slurp filename))))
+;(glitter-filter-names 3 (mapify (parse (slurp filename))))
