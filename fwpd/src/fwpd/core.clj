@@ -27,7 +27,7 @@
      	 (map :name (filter #(>= (:glitter-index %) minimum-glitter) records)))
 
 ;Solution to Ex 2
-(defn append
+(defn append1
          [suspects-list name glitter]
          (conj suspects-list (into {} {:name name :glitter-index glitter})))
 
