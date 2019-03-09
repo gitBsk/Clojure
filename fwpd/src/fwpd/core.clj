@@ -31,7 +31,10 @@
          [suspects-list name glitter]
          (conj suspects-list (into {} {:name name :glitter-index glitter})))
 
+;Soltuion to Ex 4
+(clojure.string/join "," (vals glitter-filter))
+
 
 
 ;(first (mapify (parse (slurp filename))))
-;(glitter-filter-names 3 (mapify (parse (slurp filename))))
+;(glitter-names 3 (mapify (parse (slurp filename))))
