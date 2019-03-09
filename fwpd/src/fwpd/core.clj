@@ -31,6 +31,9 @@
          [suspects-list name glitter]
          (conj suspects-list (into {} {:name name :glitter-index glitter})))
 
+;Solutions to Ex 3
+(defn validatekeys [map keywords] (if(contains? map keywords)(println "Validated")))
+
 ;Soltuion to Ex 4
 (clojure.string/join "," (vals glitter-filter))
 
