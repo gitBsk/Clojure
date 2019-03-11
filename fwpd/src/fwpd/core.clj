@@ -32,6 +32,7 @@
          (conj suspects-list (into {} {:name name :glitter-index glitter})))
 
 ;Solutions to Ex 3
+;here map = the output of glitter-filter 
 (defn validatekeys [map keywords] (if(contains? map keywords)(println "Validated")))
 
 ;Soltuion to Ex 4
