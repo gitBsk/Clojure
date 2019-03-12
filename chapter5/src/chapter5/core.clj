@@ -21,10 +21,10 @@
 
 
 ;Solution to Ex 2
-(defn comp4
+(defn bala-comp
 "Implement Comp function"
 [fn1 fn2]
-(fn [attr1 attr2]
-(fn1 (fn2 attr1 attr2))))
+(fn [& args]
+(fn1 (reduce fn2 args))))
 
 ;Sample O/P => (println ((comp4 inc +) 2 3))
