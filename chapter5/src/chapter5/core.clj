@@ -46,7 +46,7 @@
 (defn bala-assoc-in
 "Implement assoc in function"
 [m [k & kws] v]
-(bala-assoc m k (bala-assoc-in (get m k) kws v))
+(assoc m k (bala-assoc-in (get m k) kws v))
 )
 
 (bala-assoc-in users2 [1 :name] "superman")
