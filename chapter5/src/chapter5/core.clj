@@ -47,7 +47,26 @@
 "Implement assoc in function"
 [m [k & kws] v]
 (assoc m k (bala-assoc-in (get m k) kws v)
-)
+))
 
 
-(bala-assoc-in emps [:position :manager] "superman")
+;(bala-assoc-in emps [:position :manager] "superman")
+
+;Ex 4
+;Using update-in function
+;user=> heros
+;{:name "superman", :powers {:speed 10, :strength 20}}
+;user=> (update-in heros [:powers :speed] + 100)
+;{:name "superman", :powers {:speed 110, :strength 20}}
+
+;Ex 5
+
+(def heros {:name "superman", :powers {:speed 10, :strength 20}})
+
+(defn bala-update-in
+  "Implement update-in"
+  [m [k & kws] func & args]
+  (assoc m k (apply bala-update-in (get m k) kws func args))
+  )
+
+  (bala-update-in heros [:powers :speed] + 1000)
