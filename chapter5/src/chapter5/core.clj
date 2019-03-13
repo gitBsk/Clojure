@@ -39,14 +39,15 @@
 (assoc m k v)
 )
 
-(bala-assoc users :name "Superman")
+;Sample : (bala-assoc users :name "Superman")
 
-(def users2 [{:name "James" :age 26}  {:name "John" :age 43}])
+(def emps {:id 1 :position {:manager "yes" :normal "no"}})
 
 (defn bala-assoc-in
 "Implement assoc in function"
 [m [k & kws] v]
-(assoc m k (bala-assoc-in (get m k) kws v))
+(assoc m k (bala-assoc-in (get m k) kws v)
 )
 
-(bala-assoc-in users2 [1 :name] "superman")
+
+(bala-assoc-in emps [:position :manager] "superman")
