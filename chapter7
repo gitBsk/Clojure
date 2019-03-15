@@ -1,0 +1,7 @@
+
+;Solution to Ex 1
+;user=> (eval (list read-string "(Bala Interstellar)"))
+;(Bala Interstellar)
+
+
+;Solution to Ex 2
