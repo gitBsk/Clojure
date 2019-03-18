@@ -69,4 +69,4 @@
   (assoc m k (apply bala-update-in (get m k) kws func args))
   )
 
-  (bala-update-in heros [:powers :speed] + 1000)
+;(bala-update-in heros [:powers :speed] + 1000)
