@@ -22,3 +22,19 @@
          (do
            ~@body)))
      )
+
+  (defmacro or
+    "Implement the or macro"
+    ([] true)
+    ([x] x)
+    ([x & next]
+     `(let [or# ~x]
+        (if or# or# (or ~@next))))
+  )
+
+
+  (defmacro defattrs
+   "Implement solution for ex 3"
+   ([func attr]
+    `(def ~func (comp ~attr :attributes))
+   )
