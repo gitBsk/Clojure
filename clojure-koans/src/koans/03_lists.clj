@@ -9,7 +9,7 @@
   (= 1 (first '(1 2 3 4 5)))
 
   "As well as the rest"
-  (= (2 3 4 5) (rest '(1 2 3 4 5)))
+  (= '(2 3 4 5) (rest '(1 2 3 4 5)))
 
   "Count your blessings"
   (= 3 (count '(dracula dooku chocula)))
@@ -21,16 +21,16 @@
   (= () (rest '(100)))
 
   "Construction by adding an element to the front is easy"
-  (= (:a :b :c :d :e) (cons :a '(:b :c :d :e)))
+  (= '(:a :b :c :d :e) (cons :a '(:b :c :d :e)))
 
   "Conjoining an element to a list isn't hard either"
-  (= (:a :b :c :d :e) (conj '(:a :b :c :d) :e))
+  (= '(:e :a :b :c :d) (conj '(:a :b :c :d) :e))
 
   "You can use a list like a stack to get the first element"
   (= :a (peek '(:a :b :c :d :e)))
 
   "Or the others"
-  (= (:b :c :d :e) (pop '(:a :b :c :d :e)))
+  (= '(:b :c :d :e) (pop '(:a :b :c :d :e)))
 
   "But watch out if you try to pop nothing"
   (= "No dice!" (try
