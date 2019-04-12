@@ -1,0 +1,9 @@
+---
+language: clojure
+sudo: false
+lein: lein
+jdk: oraclejdk8
+script:
+- bin/fetch-configlet
+- bin/configlet lint .
+- lein test
