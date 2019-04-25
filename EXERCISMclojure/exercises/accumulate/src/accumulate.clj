@@ -1,5 +1,5 @@
 (ns accumulate)
-
+;checking
 (defn accumulate [func coll]
       (loop [tempcoll coll
              finalcoll []]
